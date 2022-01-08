@@ -1,0 +1,42 @@
+{
+  "name": "ai_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "startE": "electron .",
+    "start": "react-scripts start",
+    "watch": "webpack --config webpack.common.js --watch",
+    "dev": "npm run watch && npm run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geraltigas/ai_app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/geraltigas/ai_app/issues"
+  },
+  "homepage": "https://github.com/geraltigas/ai_app#readme",
+  "dependencies": {
+    "electron": "^15.3.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "^4.0.3",
+    "webpack-dev-server": "^4.4.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.5.0",
+    "sass": "^1.43.4",
+    "sass-loader": "^12.3.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.60.0",
+    "webpack-cli": "^4.9.1"
+  }
+}
