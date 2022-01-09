@@ -1,2 +1,6 @@
 /DSBackend/.idea
 /DSBackend/target
+/DSFrontend/.idea
+/DSSpider/.idea
+/DSFrontend/node_modules
+/DSFrontend/package-lock.json

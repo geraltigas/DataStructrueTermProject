@@ -1,0 +1,258 @@
+body{
+    width: 300px;
+    height: 700px !important;
+    margin: 0px !important;
+    padding: 0;
+    border: 0;
+    overflow:auto;
+    overflow-x: hidden;
+    font-family: Roboto, serif;
+}
+
+.Search {
+    width: 100%;
+    height: 100%;
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+}
+
+.Logo {
+    user-select:none;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 200px;
+    left: 400px;
+}
+
+.SearchImg img{
+    user-select:none;
+    position: relative;
+    width: 30px;height:30px;
+    left: 557px;
+    bottom: 22px
+}
+
+.SearchBar {
+    border: 1px solid #bdc3c7;
+    height: 50px;
+    width: 600px;
+    position: relative;
+    left: 295px;
+    top: 250px;
+    border-radius: 25px;
+    transition: all 0.25s;
+}
+
+.SearchBar:hover {
+    box-shadow: 1px 1px #636e72, 2px 2px #636e72, 3px 3px #636e72;
+    transform: translateX(-3px);
+    transition: all 0.25s;
+}
+
+.Logo div{
+    font-size: 70px;
+}
+
+input{
+    background:none;
+
+    outline:none;
+
+    border:0px;
+
+}
+
+.SearchInput {
+    position: relative;
+    left: 20px;
+    top: 9px;
+    height: 30px;
+    font-size: 25px;
+    font-family: Roboto, serif;
+    width: 530px;
+}
+
+.SearchImgR img{
+    user-select:none;
+    position: relative;
+    width: 30px;height:30px;
+    left: 557px;
+    bottom: 22px
+}
+
+.SearchBarR {
+    border: 1px solid #bdc3c7;
+    height: 50px;
+    width: 600px;
+    position: relative;
+    left: 295px;
+    top: 20px;
+    border-radius: 25px;
+    transition: all 0.25s;
+}
+
+.SearchInputR {
+    position: relative;
+    left: 20px;
+    top: 9px;
+    height: 30px;
+    font-size: 25px;
+    font-family: Roboto, serif;
+    width: 530px;
+}
+
+.SearchBarR:hover {
+    box-shadow: 1px 1px #636e72, 2px 2px #636e72, 3px 3px #636e72;
+    transform: translateX(-3px);
+    transition: all 0.25s;
+}
+
+.ArrowLeft {
+    position: fixed;
+    width: 70px;
+    height: 70px;
+    left: 10px;
+    top: 350px
+}
+
+.ArrowLeft:hover {
+    position: fixed;
+    width: 70px;
+    height: 70px;
+    left: 10px;
+    top: 350px;
+    animation: shakeL 1s infinite
+}
+
+.ArrowRight:hover {
+    position: fixed;
+    width: 70px;
+    height: 70px;
+    right: 10px;
+    top: 350px;
+    animation: shakeR 1s infinite;
+}
+
+
+
+.ArrowRight {
+    position: fixed;
+    width: 70px;
+    height: 70px;
+    right: 10px;
+    top: 350px;
+}
+
+@keyframes shakeR {
+    0% {
+        transform: translateX(0px);
+    }
+
+    50% {
+        transform: translateX(15px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes shakeL {
+    0% {
+        transform: translateX(0px);
+    }
+
+    50% {
+        transform: translateX(-15px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+.line {
+    background-color: #7f8c8d;
+    position: relative;
+    left: 150px;
+    top: 40px;
+    width: 900px;
+    height: 2px;
+}
+
+.Content {
+    display: flow;
+    flex-direction: column;
+    position: relative;
+    left: 200px;
+    top: 50px;
+    width: 800px;
+    height: 638px;
+}
+
+.NewsBox {
+    border-radius: 3px;
+    user-select:none;
+    width: 99%;
+    height: 170px;
+    margin-bottom: 3px;
+    font-family: Roboto, serif ;
+    transition: all 0.25s;
+    background-color: rgba(220, 220, 220, 0.54);
+}
+
+.NewsBox a {
+    position: relative;
+    top: 5px;
+    left: 8px;
+}
+
+.NewsBox:hover {
+    border-radius: 3px;
+    user-select:none;
+    width: 99%;
+    height: 170px;
+    margin-bottom: 3px;
+    font-family: Roboto, serif ;
+    background-color: #a1d6ff;
+    transform: scale(1.01);
+    transition: all 0.25s;
+    float: none;
+}
+
+.Title{
+    font-size: 30px;
+    position: relative;
+    left: 8px;
+    color: #1e18ab;
+    width: max-content;
+    height: max-content;
+}
+
+.Title:hover{
+    font-size: 30px;
+    position: relative;
+    left: 8px;
+    color: #1e18ab;
+    text-decoration: underline;
+    width: max-content;
+    height: max-content;
+}
+
+.PickUp {
+    position: relative;
+    left: 8px;
+    font-size: 20px;
+    height: 95px
+}
+
+.Time {
+    position: relative;
+    left: 640px;
+}
+
+
