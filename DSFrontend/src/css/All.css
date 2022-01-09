@@ -255,4 +255,101 @@ input{
     left: 640px;
 }
 
+.Article {
+    position: relative;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    width: 800px;
+    left: 190px;
+    top: 70px
+}
+
+.TitleShow {
+    font-size: 60px;
+}
+
+.InfoShow {
+    color: #636e72;
+}
+
+.ConShow {
+    width: 780px;
+}
+
+.Buttons {
+    display: flex;
+    position: relative;
+    left: 320px;
+    line-height: 30px;
+}
+
+.Buttons button {
+    margin-left: 4px;
+    width: 30px;
+    height: 30px;
+    background-color: #ffffff;
+    border: 1px solid #74b9ff;
+    border-radius: 15px;
+}
+
+.Buttons button:hover{
+    margin-left: 4px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #74b9ff;
+    border-radius: 15px;
+}
+
+.Buttons button:active{
+    background-color: #74b9ff;
+    transform: translate(0px,1px);
+    transition: all 0.1s;
+}
+
+.LineShow {
+    background-color: #636e72;
+    width: 780px;
+    height:2px;
+    margin-top: 7px;
+}
+
+.WebView {
+    border: 1px solid #b2bec3;
+    width: 1184px;
+    height: 737px;
+}
+
+.ButtonBack{
+    border: 1px solid #dfe6e9;
+    background-color: #dfe6e9;
+    position: fixed;
+    bottom: 680px;
+    width: 50px;
+    left: 12px;
+    height: 50px;
+    border-radius: 25px;
+    transition: all 0.1s;
+}
+
+.ButtonBack:active{
+    border: 1px solid #636e72;
+    background-color: #636e72;
+    position: fixed;
+    bottom: 680px;
+    width: 50px;
+    left: 12px;
+    height: 50px;
+    border-radius: 25px;
+    transform: translate(0px,1px);
+    transition: all 0.1s;
+}
+
+.ButtonBack img {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: 3px;
+}
+
 
