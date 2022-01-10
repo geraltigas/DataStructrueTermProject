@@ -10,151 +10,9 @@ const App = (props) => {
 
     const [keywords,setKeywords] = React.useState("")
 
-    const [response,setResponse] = React.useState({})
+    // const [response,setResponse] = React.useState({})
     
-    const [news,setNews] = React.useState([
-        {
-            content: 'this is news 1',
-            title: 'title 1',
-            time: {
-                year: 2020,
-                month: 12,
-                day: 31,
-                hour: 23,
-                minute: 59,
-                second: 59
-            },
-            url: "bilibili.com",
-            source: "JB"
-        },
-        {
-            content: 'this is news 2',
-            title: 'title 2',
-            time: {
-                year: 2020,
-                month: 12,
-                day: 31,
-                hour: 23,
-                minute: 59,
-                second: 59
-            },
-            url: "www.example2.com",
-            source: "JB2"
-        },
-        {
-            content: 'this is news 3',
-            title: 'title 3',
-            time: {
-                year: 2020,
-                month: 12,
-                day: 31,
-                hour: 23,
-                minute: 59,
-                second: 59
-            },
-            url: "www.example3.com",
-            source: "JB"
-        },
-        {
-            content: 'this is news 4',
-            title: 'title 4',
-            time: {
-                year: 2020,
-                month: 12,
-                day: 31,
-                hour: 23,
-                minute: 59,
-                second: 59
-            },
-            url: "www.example4.com",
-            source: "JB"
-        },
-        {
-            content: 'this is news 5',
-            title: 'title 5',
-            time: {
-                year: 2020,
-                month: 12,
-                day: 31,
-                hour: 23,
-                minute: 59,
-                second: 59
-            },
-            url: "www.example5.com",
-            source: "JB"
-        },
-        {
-            content: 'this is news 5',
-            title: 'title 5',
-            time: {
-                year: 2020,
-                month: 12,
-                day: 31,
-                hour: 23,
-                minute: 59,
-                second: 59
-            },
-            url: "www.example5.com",
-            source: "JB"
-        },
-        {
-            content: 'this is news 5',
-            title: 'title 5',
-            time: {
-                year: 2020,
-                month: 12,
-                day: 31,
-                hour: 23,
-                minute: 59,
-                second: 59
-            },
-            url: "www.example5.com",
-            source: "JB"
-        },
-        {
-            content: 'this is news 5',
-            title: 'title 5',
-            time: {
-                year: 2020,
-                month: 12,
-                day: 31,
-                hour: 23,
-                minute: 59,
-                second: 59
-            },
-            url: "www.example5.com",
-            source: "JB"
-        },
-        {
-            content: 'this is news 5',
-            title: 'title 5',
-            time: {
-                year: 2020,
-                month: 12,
-                day: 31,
-                hour: 23,
-                minute: 59,
-                second: 59
-            },
-            url: "www.example5.com",
-            source: "JB"
-        },
-        {
-            content: 'this is news 5',
-            title: 'title 5',
-            time: {
-                year: 2020,
-                month: 12,
-                day: 31,
-                hour: 23,
-                minute: 59,
-                second: 59
-            },
-            url: "www.example5.com",
-            source: "JB"
-        },
-    ])
-
+    const [news,setNews] = React.useState([])
 
     const [index,setIndex] = React.useState(0);
 
@@ -162,16 +20,16 @@ const App = (props) => {
     let page;
     switch (pageIndex){
         case 0:
-            page = (<Search> </Search>)
+            page = (<Search changePage={setPageIndex} changeKeywords={setKeywords} changeNews={setNews}> </Search>)
             break;
         case 1:
-            page = (<Res news={news}> </Res>)
+            page = (<Res changePage={setPageIndex} changeIndex={setIndex} news={news} keywords={keywords} changeNews={setNews}> </Res>)
             break;
         case 2:
-            page = (<Show news={news} index={index}> </Show>)
+            page = (<Show changePage={setPageIndex} news={news} index={index} changeIndex={setIndex}> </Show>)
             break;
         case 3:
-            page = (<Web news={news} index={index}> </Web>)
+            page = (<Web changePage={setPageIndex} news={news} index={index}> </Web>)
             break;
     }
 

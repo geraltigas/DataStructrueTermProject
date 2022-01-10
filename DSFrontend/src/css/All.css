@@ -274,6 +274,8 @@ input{
 }
 
 .ConShow {
+    position: relative;
+    top: 10px;
     width: 780px;
 }
 
@@ -350,6 +352,21 @@ input{
     height: 30px;
     position: relative;
     top: 3px;
+}
+
+.url {
+    position: relative;
+    left: 205px;
+    top: 25px;
+    color: #1e18ab;
+}
+
+.url:hover {
+    position: relative;
+    left: 205px;
+    top: 25px;
+    color: #1e18ab;
+    text-decoration: underline;
 }
 
 

@@ -23,7 +23,7 @@ public class Controller {
         Controller.test();
     }
 
-    @RequestMapping("/{keywords}/{isContinue}")
+    @GetMapping("/getnews/{keywords}/{isContinue}")
     public String getNews(@PathVariable String keywords,@PathVariable boolean isContinue){
         List<News> reponseList = newsService.getNews(keywords,isContinue);
         String response = JSON.toJSONString(reponseList);

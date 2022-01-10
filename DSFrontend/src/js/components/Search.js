@@ -1,6 +1,31 @@
 import React from "react";
+import axios from "axios";
 
-const Search = () => {
+const Search = (props) => {
+
+    let search;
+
+    const handleChange = (e) => {
+        search = e.target.value;
+    }
+
+    const handleKeyDown =  (e) => {
+        if (e.code === 'Enter') {
+            let isInput = false;
+            for (let i = 0; i < search.length; i++) {
+                if (search[i] === '\'') isInput = true;
+            }
+            if (isInput) {
+                return
+            }
+            axios.get('http://localhost:8080/getnews/1/0').then((res) => {
+                props.changePage(1)
+                props.changeKeywords(search)
+                console.log(search)
+                props.changeNews(res.data)
+            })
+        }
+    }
 
     return (
         <div className={"Search"}>
@@ -17,7 +42,7 @@ const Search = () => {
                 <div style={{color: "#5087f4"}}>h</div>
             </div>
             <div className="SearchBar mdui-ripple-gray">
-                <input type={"text"} className={"SearchInput"} maxLength={37}></input>
+                <input type={"text"} className={"SearchInput"} maxLength={37} onKeyDown={handleKeyDown} onChange={handleChange}></input>
                 <div className={"SearchImg"}><img draggable={false} src={"src/static/search.png"}/></div>
             </div>
             <div className={"SearchButton"}> </div>
