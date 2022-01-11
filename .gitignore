@@ -4,3 +4,5 @@
 /DSSpider/.idea
 /DSFrontend/node_modules
 /DSFrontend/package-lock.json
+/DSBackend/src/main/resources/static/data.json
+/DSBackend/src/main/resources/static/data1.json

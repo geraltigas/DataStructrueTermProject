@@ -25,31 +25,73 @@ const Res = (props) => {
             if (isInput) {
                 return
             }
-            axios.get('http://localhost:8080/getnews/1/0').then((res) => {
+            axios.get('http://localhost:8080/getnews/' + search + '/0').then((res) => {
                 props.changePage(1)
                 props.changeKeywords(search)
                 props.changeNews(res.data)
+                console.log(res.data)
             })
         }
     }
 
     const pickup = (string, keywords) => {
-        return string;
+        let array = keywords.split(' ')
+        for (let i = 0; i < array.length; i++) {
+            let matchArray = string.match(/(?<=[>。？]?)[\s\S]+?[<。？]?(?=[<])/g)
+            console.log(matchArray)
+            for (let j = 0; j < matchArray.length; j++) {
+                let word = matchArray[j]
+                if (word[0] !== '<') {
+                }else if (word.indexOf('>') !== word.length-1) {
+                    word = word.substring(word.indexOf('>')+1,word.length);
+                }else {
+                    continue
+                }
+                console.log(word)
+                console.log(array[i])
+                console.log(word.indexOf(array[i]))
+                if (word.indexOf(array[i]) !== -1) {
+                    return word
+                }
+            }
+        }
+        return ""
     }
 
     const formatTime = (time) => {
-        return '' + time.year + '.' + time.month + '.' + time.day + ' ' + time.hour + ':' + time.minute + ':' + time.second;
+        if (time === undefined) return ""
+        return '' + time.year + '.' + time.month + '.' + time.day + ' ' + (time.hour < 10 ?('0' + time.hour ) : time.hour)  + ':' +  (time.minute < 10 ? (time.minute +  '0') : time.minute) + ':' + (time.second < 10 ? (time.second +  '0') : time.second) ;
+    }
+
+    const handleUrlClick = (index) => {
+        return () => {
+            console.log("clicked")
+            props.changeIndex(index)
+            props.changePage(3)
+        }
+    }
+
+    const handleNewsPageIndex = (delta) => {
+        return () => {
+            axios.get('http://localhost:8080/getnews/' + props.keywords + '/' + ((props.newsPageIndex + delta) < 0 ? 0 :props.newsPageIndex+delta)).then((res) => {
+                props.changePage(1)
+                props.changeNews(res.data)
+                props.changeNewsPageIndex((props.newsPageIndex + delta) < 0 ? 0 :props.newsPageIndex+delta)
+                console.log(res.data)
+            })
+        }
     }
 
     let newsList = props.news.map((data,index) => {
-        return (
-            <div className={"NewsBox"} key={index} onClick={handleBoxClick(index)}>
+        if (data.content !== undefined)
+            return (
+            <div className={"NewsBox"} key={index}>
                 <a>{data.url}</a>
-                <div className={"Title"}>{data.title}</div>
-                <div className={"PickUp"}>{pickup(data.content,props.keywords)}</div>
+                <div className={"Title"} onClick={handleUrlClick(index)}>{data.title}</div>
+                <div className={"PickUp"} dangerouslySetInnerHTML={{__html: pickup(data.content,props.keywords)}} onClick={handleBoxClick(index)}></div>
                 <div className={"Time"}>{formatTime(data.time)}</div>
             </div>
-        )
+            )
     })
 
     useEffect(() => {
@@ -66,8 +108,8 @@ const Res = (props) => {
             <div className={"Content"}>
                 {newsList}
             </div>
-            <img src={"src/static/arrow-double-left.png"} className={"ArrowLeft"}/>
-            <img src={"src/static/arrow-double-right.png"} className={"ArrowRight"}/>
+            <img src={"src/static/arrow-double-left.png"} className={"ArrowLeft"} onClick={handleNewsPageIndex(-1)}/>
+            <img src={"src/static/arrow-double-right.png"} className={"ArrowRight"} onClick={handleNewsPageIndex(1)}/>
         </div>
     )
 }

@@ -231,6 +231,10 @@ input{
     color: #1e18ab;
     width: max-content;
     height: max-content;
+    max-width: 700px;
+    white-space: nowrap;/*设置不换行*/
+    overflow: hidden; /*设置隐藏*/
+    text-overflow: ellipsis; /*设置隐藏部分为省略号*/
 }
 
 .Title:hover{
@@ -241,18 +245,27 @@ input{
     text-decoration: underline;
     width: max-content;
     height: max-content;
+    max-width: 700px;
+    white-space: nowrap;/*设置不换行*/
+    overflow: hidden; /*设置隐藏*/
+    text-overflow: ellipsis; /*设置隐藏部分为省略号*/
 }
 
 .PickUp {
     position: relative;
     left: 8px;
     font-size: 20px;
-    height: 95px
+    max-height: 80px;
+    overflow: hidden;
+    width: 760px;
+    margin-bottom: 6px;
+    text-overflow: ellipsis;
 }
 
 .Time {
     position: relative;
     left: 640px;
+    bottom: 5px
 }
 
 .Article {
@@ -277,6 +290,8 @@ input{
     position: relative;
     top: 10px;
     width: 780px;
+    margin-bottom: 30px;
+    align-items: center;
 }
 
 .Buttons {
@@ -318,8 +333,8 @@ input{
 
 .WebView {
     border: 1px solid #b2bec3;
-    width: 1184px;
-    height: 737px;
+    width: 1195px;
+    height: 766px;
 }
 
 .ButtonBack{
@@ -354,19 +369,36 @@ input{
     top: 3px;
 }
 
-.url {
-    position: relative;
+.Url {
+    position: absolute;
+    bottom: 465px;
+    width: 160px;
     left: 205px;
-    top: 25px;
     color: #1e18ab;
+    white-space: nowrap;/*设置不换行*/
+    overflow: hidden; /*设置隐藏*/
+    text-overflow: ellipsis; /*设置隐藏部分为省略号*/
 }
 
-.url:hover {
-    position: relative;
+.Url:hover {
+    position: absolute;
+    bottom: 465px;
     left: 205px;
-    top: 25px;
+    width: 160px;
     color: #1e18ab;
+    white-space: nowrap;/*设置不换行*/
+    overflow: hidden; /*设置隐藏*/
+    text-overflow: ellipsis; /*设置隐藏部分为省略号*/
     text-decoration: underline;
+}
+
+img{
+    max-width : 100% !important;
+    max-height: 500px !important;
+}
+
+video{
+    max-width : 100% !important;
 }
 
 

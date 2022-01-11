@@ -18,11 +18,12 @@ const Search = (props) => {
             if (isInput) {
                 return
             }
-            axios.get('http://localhost:8080/getnews/1/0').then((res) => {
+            axios.get('http://localhost:8080/getnews/'+ search + '/0').then((res) => {
                 props.changePage(1)
                 props.changeKeywords(search)
                 console.log(search)
                 props.changeNews(res.data)
+                console.log(res.data)
             })
         }
     }

@@ -16,6 +16,8 @@ const App = (props) => {
 
     const [index,setIndex] = React.useState(0);
 
+    const [newsPageIndex,setNewsPageIndex] = React.useState(0);
+
     //Router
     let page;
     switch (pageIndex){
@@ -23,7 +25,7 @@ const App = (props) => {
             page = (<Search changePage={setPageIndex} changeKeywords={setKeywords} changeNews={setNews}> </Search>)
             break;
         case 1:
-            page = (<Res changePage={setPageIndex} changeIndex={setIndex} news={news} keywords={keywords} changeNews={setNews}> </Res>)
+            page = (<Res newsPageIndex={newsPageIndex} changeNewsPageIndex={setNewsPageIndex} changePage={setPageIndex} changeKeywords={setKeywords} changeIndex={setIndex} news={news} keywords={keywords} changeNews={setNews}> </Res>)
             break;
         case 2:
             page = (<Show changePage={setPageIndex} news={news} index={index} changeIndex={setIndex}> </Show>)

@@ -33,7 +33,7 @@ public class News {
             if (o1.time.year > o2.time.year) return -1;
             else if (o1.time.year < o2.time.year) return 1;
             else {
-                if (o1.time.month > o2.time.year) return -1;
+                if (o1.time.month > o2.time.month) return -1;
                 else if ( o1.time.month < o2.time.month) return 1;
                 else {
                     if (o1.time.day > o2.time.day) return -1;

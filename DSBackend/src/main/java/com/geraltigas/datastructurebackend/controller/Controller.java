@@ -24,10 +24,10 @@ public class Controller {
     }
 
     @GetMapping("/getnews/{keywords}/{isContinue}")
-    public String getNews(@PathVariable String keywords,@PathVariable boolean isContinue){
+    public String getNews(@PathVariable String keywords,@PathVariable int isContinue){
         List<News> reponseList = newsService.getNews(keywords,isContinue);
+        System.out.println(keywords);
         String response = JSON.toJSONString(reponseList);
-        System.out.println(response);
         return response;
     }
 
